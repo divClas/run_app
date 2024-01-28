@@ -1,0 +1,49 @@
+.body_participants {
+  color: white;
+  margin-top: 20px;
+  padding: 30px 30px;
+  background-color: #a3b18a;
+  border-radius: 20px;
+  font-size: 17px;
+}
+
+.main_body_head ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  color: #344e41;
+
+  border-bottom: 2px solid;
+}
+.main_body_head ul li {
+  color: #344e41;
+  font-weight: 600;
+  width: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+.main_body {
+  padding: 20px 0px;
+}
+.main_body ul {
+  display: flex;
+  justify-content: center;
+}
+.main_body ul li {
+  color: white;
+  font-weight: 200;
+  width: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+.line {
+  padding-left: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}

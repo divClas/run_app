@@ -1,0 +1,20 @@
+.about_body {
+  background-color: #a3b18a;
+  border-radius: 20px;
+  margin: 20px 0px;
+  padding: 30px 30px;
+}
+.about-title {
+  margin-bottom: 20px; /* Отступ снизу */
+}
+
+.about-content h2 {
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.about-content img {
+  width: 100%; /* Ширина изображения на всю ширину контейнера */
+  max-width: 400px; /* Максимальная ширина изображения */
+  display: block; /* Блочный элемент */
+  margin: 20px 0; /* Отступы сверху и снизу */
+}
