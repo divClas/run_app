@@ -8,6 +8,7 @@ import { RootState } from "@reduxjs/toolkit/query";
 import styles from "./Participants.module.css";
 import ParticipantForm from "./feuathers/form/ParticipantForm";
 import { NavLink } from "react-router-dom";
+import Login from "../Login/Login";
 
 function Participants() {
   const participants = useSelector((state: RootState) =>
@@ -15,18 +16,18 @@ function Participants() {
   );
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-  const [sortField, setSortField] = useState(""); 
-  const [sortDirection, setSortDirection] = useState("asc"); 
+  const [sortField, setSortField] = useState("");
+  const [sortDirection, setSortDirection] = useState("asc");
   const generateId = (): number => {
-    return Math.floor(Math.random() * 10001); 
+    return Math.floor(Math.random() * 10001);
   };
   const handleAddParticipant = (formData) => {
     const newParticipant = {
       ...formData,
-      id: generateId(), 
+      id: generateId(),
     };
     dispatch(addParticipant(newParticipant));
-    setShowModal(false); 
+    setShowModal(false);
   };
 
   const toggleModal = () => {
@@ -167,6 +168,7 @@ function Participants() {
           ))}
         </div>
       </div>
+      {/* <Login/> */}
     </div>
   );
 }

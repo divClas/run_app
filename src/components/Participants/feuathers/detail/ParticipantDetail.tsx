@@ -8,6 +8,8 @@ import {
   updateParticipant,
 } from "../../../../redux/slice/participantsSlice";
 import ParticipantForm from "../form/ParticipantForm";
+import { useNavigate } from "react-router-dom";
+
 
 const ParticipantDetail = () => {
   const { id } = useParams();
@@ -15,10 +17,12 @@ const ParticipantDetail = () => {
   const participants = useSelector(selectParticipants);
   const [editMode, setEditMode] = useState(false);
   const [selectedParticipant, setSelectedParticipant] = useState(null);
+  const navigate = useNavigate();
 
   const participant = participants.find(
     (participant) => participant.id == parseInt(id)
   );
+
 
   const handleEdit = (participant) => {
     setSelectedParticipant(participant);
@@ -27,12 +31,18 @@ const ParticipantDetail = () => {
 
   const handleDelete = (participantId) => {
     dispatch(deleteParticipant(participantId));
+    navigate("/participants");
   };
 
   const handleCloseForm = () => {
     setEditMode(false);
     setSelectedParticipant(null);
+    navigate("/participants");
   };
+  const handleReverse = () => {
+    navigate("/participants");
+
+  }
 
   if (!participant) {
     return <div>Участник не найден</div>;
@@ -71,7 +81,7 @@ const ParticipantDetail = () => {
             <button onClick={() => handleDelete(participant.id)}>
               Удалить
             </button>
-            <button>Закрыть</button>
+            <button onClick={() => handleReverse()}>Закрыть</button>
           </div>
         </div>
       )}

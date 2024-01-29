@@ -14,6 +14,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div className="login_name">
+            <h1></h1>
+      </div>
     </header>
   );
 };

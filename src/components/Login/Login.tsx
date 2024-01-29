@@ -1,0 +1,51 @@
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/slice/userSlice";
+import { UserData } from "../../redux/user";
+
+const Login = ({ onLogin }) => {
+    const dispatch = useDispatch();
+
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLoginChange = (e) => {
+        setLogin(e.target.value);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const user = UserData.find((user) => user.login === login && user.password === password);
+
+        if (user) {
+            dispatch(loginUser(user));
+            localStorage.setItem('user', JSON.stringify(user));
+            console.log("вы авторизовались ");
+            onLogin(true);
+        } else {
+        }
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Введите ваш логин</label>
+                    <input type="text" value={login} onChange={handleLoginChange} />
+                </div>
+                <div>
+                    <label>Введите ваш пароль</label>
+                    <input type="password" value={password} onChange={handlePasswordChange} />
+                </div>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    );
+};
+
+export default Login;

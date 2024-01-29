@@ -3,30 +3,38 @@
   padding: 30px 0px;
   background-color: #a3b18a;
   border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
 }
+
 .navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+
 .navbar_body {
   display: flex;
 }
+
 .navbar_body li {
   list-style: none;
 }
+
 .link_header {
   padding-left: 30px;
   text-decoration: none;
   color: white;
   font-size: 2em;
 }
+
 .link_header a {
   text-decoration: none;
   color: white;
   text-transform: uppercase;
   transition: all .2s ease-out;
 }
+
 .link_header a:hover {
   opacity: 0.6;
 }

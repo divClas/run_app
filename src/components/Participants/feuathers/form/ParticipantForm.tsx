@@ -213,7 +213,7 @@ const ParticipantForm: React.FC<ParticipantFormProps> = ({
             />
             <label>Оплата взноса за участие</label>
           </div>
-          <button type="submit">Добавить участника</button>
+          <button type="submit">Сохранить</button>
         </form>
       </div>
     </div>
