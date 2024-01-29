@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
 const Header = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  let login = user ? user.login : null;
   return (
     <header className={styles.header}>
       <nav className={styles.navbar}>
@@ -14,8 +16,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="login_name">
-            <h1></h1>
+      <div className={login ? styles.login_name : ""}>
+        <h1>{login}</h1>
       </div>
     </header>
   );

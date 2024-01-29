@@ -1,10 +1,11 @@
 .header {
   margin-top: 20px;
-  padding: 30px 0px;
-  background-color: #a3b18a;
+  padding: 10px 30px;
+  background-color: white;
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar {
@@ -24,17 +25,49 @@
 .link_header {
   padding-left: 30px;
   text-decoration: none;
-  color: white;
-  font-size: 2em;
+  color: black;
+  font-size: 1.5em;
 }
 
 .link_header a {
   text-decoration: none;
-  color: white;
+  color: black;
   text-transform: uppercase;
-  transition: all .2s ease-out;
+  transition: opacity 0.2s ease-out;
+  cursor: pointer;
 }
 
 .link_header a:hover {
   opacity: 0.6;
+}
+.login_name {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  background: black;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .link_header {
+    padding-left: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
+  .login_name {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    background: black;
+    color: white;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 388px) {
+  .navbar_body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }

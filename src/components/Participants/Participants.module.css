@@ -1,28 +1,25 @@
 .body_participants {
-  color: white;
+  color: black;
   margin-top: 20px;
   padding: 30px 30px;
-  background-color: #a3b18a;
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .main_body_head ul {
   display: flex;
   justify-content: center;
-  padding: 20px;
-  color: #344e41;
+  padding: 20px 0px;
+  color: black;
 
   border-bottom: 2px solid;
 }
 .main_body_head ul li {
   color: #344e41;
   font-weight: 600;
-  width: 16%;
+  width: 17%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
 }
 .main_body {
   padding: 20px 0px;
@@ -30,20 +27,122 @@
 .main_body ul {
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 .main_body ul li {
-  color: white;
-  font-weight: 200;
-  width: 16%;
+  color: black;
+  width: 17%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
+
   margin: 20px 0px;
 }
 .line {
   padding-left: 10px;
   font-size: 20px;
-  color: white;
+  color: black;
   cursor: pointer;
+}
+.participants_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.participants_head h1 {
+  font-size: 2em;
+}
+.btn_add button {
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: opacity 0.2s ease-out;
+}
+.btn_add button:hover {
+  opacity: 0.6;
+}
+.search {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .body_participants {
+    font-size: 12px;
+  }
+  .main_body_head ul {
+    padding: 5px 0px;
+  }
+  .main_body ul li {
+    color: black;
+    width: 17%;
+    display: flex;
+
+    margin: 5px 0px;
+  }
+}
+
+.main_body_mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.mobile_card {
+  color: black;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+.ul_participant li {
+  margin-bottom: 10px;
+}
+.ul_participant span {
+  font-weight: bold;
+  padding-right: 2px;
+}
+.search_input_mobile input {
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0px;
+}
+.btn_add_mobile button {
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.participants_head_mobile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.title_mobile {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+@media (max-width: 670px) {
+  .main_body_mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .centr {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 556px) {
+  .participants_head_mobile {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }

@@ -6,16 +6,19 @@ import Participants from "./components/Participants/Participants";
 import About from "./components/About/About";
 import ParticipantDetail from "./components/Participants/feuathers/detail/ParticipantDetail";
 import Login from "./components/Login/Login";
+import { useMediaQuery } from "react-responsive";
+import ParticipantsMobile from "./components/Participants/ParticipantsMobile";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isMobile = useMediaQuery({ query: "(max-width: 932px)" });
 
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       setIsLoggedIn(true);
     }
-  }, [])
+  }, []);
   const handleLogin = (status) => {
     setIsLoggedIn(status);
   };
@@ -24,11 +27,15 @@ function App() {
     <>
       <div className="container">
         <Header />
-        {!isLoggedIn && <Login onLogin={handleLogin} />} 
+        {!isLoggedIn && <Login onLogin={handleLogin} />}
         {isLoggedIn && (
           <Routes>
             <Route path="/" element={<About />} />
-            <Route path="/participants" element={<Participants />} />
+            {isMobile ? (
+              <Route path="/participants" element={<ParticipantsMobile />} />
+            ) : (
+              <Route path="/participants" element={<Participants />} />
+            )}
             <Route path="/participants/:id" element={<ParticipantDetail />} />
           </Routes>
         )}

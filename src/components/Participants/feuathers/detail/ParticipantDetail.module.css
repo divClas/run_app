@@ -1,0 +1,61 @@
+.participant_wrapper {
+  margin-top: 20px;
+}
+.participant_body {
+  color: black;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+
+  margin: 0 auto;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.info_body {
+  max-width: 400px;
+}
+
+.info li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.info_body span {
+  font-weight: bold;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+  background-color: #ddd;
+}
+
+.buttons button:focus {
+  outline: none;
+}
+
+.buttons button:active {
+  transform: translateY(1px);
+}
+@media (max-width: 423px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

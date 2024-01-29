@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import InputMask from "react-input-mask";
-
-
 import styles from "./ParticipantForm.module.css";
 
 interface FormData {
@@ -80,128 +78,112 @@ const ParticipantForm: React.FC<ParticipantFormProps> = ({
           &times;
         </span>
         <form className={styles.form} onSubmit={formik.handleSubmit}>
-          <div>
-            <label>Фамилия:</label>
-            <input
-              type="text"
-              name="surname"
-              value={formik.values.surname}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.surname && formik.errors.surname ? (
-              <div className={styles.error}>{formik.errors.surname}</div>
-            ) : null}
-          </div>
+          <label>Фамилия:</label>
+          <input
+            type="text"
+            name="surname"
+            value={formik.values.surname}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.surname && formik.errors.surname ? (
+            <div className={styles.error}>{formik.errors.surname}</div>
+          ) : null}
 
-          <div>
-            <label>Имя:</label>
-            <input
-              type="text"
-              name="name"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.name && formik.errors.name ? (
-              <div className={styles.error}>{formik.errors.name}</div>
-            ) : null}
-          </div>
+          <label>Имя:</label>
+          <input
+            type="text"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.name && formik.errors.name ? (
+            <div className={styles.error}>{formik.errors.name}</div>
+          ) : null}
 
-          <div>
-            <label>Отчество:</label>
-            <input
-              type="text"
-              name="middleName"
-              value={formik.values.middleName}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.middleName && formik.errors.middleName ? (
-              <div className={styles.error}>{formik.errors.middleName}</div>
-            ) : null}
-          </div>
+          <label>Отчество:</label>
+          <input
+            type="text"
+            name="middleName"
+            value={formik.values.middleName}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.middleName && formik.errors.middleName ? (
+            <div className={styles.error}>{formik.errors.middleName}</div>
+          ) : null}
 
-          <div>
-            <label>Город:</label>
-            <input
-              type="text"
-              name="city"
-              value={formik.values.city}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.city && formik.errors.city ? (
-              <div className={styles.error}>{formik.errors.city}</div>
-            ) : null}
-          </div>
+          <label>Город:</label>
+          <input
+            type="text"
+            name="city"
+            value={formik.values.city}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.city && formik.errors.city ? (
+            <div className={styles.error}>{formik.errors.city}</div>
+          ) : null}
 
-          <div>
-            <label>Дата рождения:</label>
-            <input
-              type="date"
-              name="birthday"
-              value={formik.values.birthday}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.birthday && formik.errors.birthday ? (
-              <div className={styles.error}>{formik.errors.birthday}</div>
-            ) : null}
-          </div>
+          <label>Дата рождения:</label>
+          <input
+            type="date"
+            name="birthday"
+            value={formik.values.birthday}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.birthday && formik.errors.birthday ? (
+            <div className={styles.error}>{formik.errors.birthday}</div>
+          ) : null}
 
-          <div>
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className={styles.error}>{formik.errors.email}</div>
-            ) : null}
-          </div>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div className={styles.error}>{formik.errors.email}</div>
+          ) : null}
 
-          <div>
-            <label>Номер телефона:</label>
-            <InputMask
-              mask="+7-999-999-9999"
-              maskChar="_"
-              type="tel"
-              name="phone"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              required
-            />
-            {formik.touched.phone && formik.errors.phone ? (
-              <div className={styles.error}>{formik.errors.phone}</div>
-            ) : null}
-            <small>Формат: +7-999-999-9999</small>
-          </div>
+          <label>Номер телефона:</label>
+          <InputMask
+            mask="+7-999-999-9999"
+            maskChar="_"
+            type="tel"
+            name="phone"
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            required
+          />
+          {formik.touched.phone && formik.errors.phone ? (
+            <div className={styles.error}>{formik.errors.phone}</div>
+          ) : null}
+          <small>Формат: +7-999-999-9999</small>
 
-          <div>
-            <label>Дистанция:</label>
-            <select
-              name="distance"
-              value={formik.values.distance}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            >
-              {distances.map((distance, index) => (
-                <option key={index} value={distance}>
-                  {distance}
-                </option>
-              ))}
-            </select>
-            {formik.touched.distance && formik.errors.distance ? (
-              <div className={styles.error}>{formik.errors.distance}</div>
-            ) : null}
-          </div>
-
-          <div>
+          <label>Дистанция:</label>
+          <select
+            name="distance"
+            value={formik.values.distance}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          >
+            {distances.map((distance, index) => (
+              <option key={index} value={distance}>
+                {distance}
+              </option>
+            ))}
+          </select>
+          {formik.touched.distance && formik.errors.distance ? (
+            <div className={styles.error}>{formik.errors.distance}</div>
+          ) : null}
+          <div className={styles.check}>
+            <label>Оплата взноса за участие</label>
             <input
               type="checkbox"
               name="hasPayment"
@@ -211,9 +193,10 @@ const ParticipantForm: React.FC<ParticipantFormProps> = ({
               }
               onBlur={formik.handleBlur}
             />
-            <label>Оплата взноса за участие</label>
           </div>
-          <button type="submit">Сохранить</button>
+          <button className={styles.save} type="submit">
+            Сохранить
+          </button>
         </form>
       </div>
     </div>
