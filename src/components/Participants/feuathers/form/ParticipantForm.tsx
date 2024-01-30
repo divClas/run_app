@@ -30,11 +30,7 @@ const ParticipantForm: React.FC<ParticipantFormProps> = ({
   onClose,
   initialValues,
 }) => {
-  // const [formData, setFormData] = useState(initialValues);
 
-  // useEffect(() => {
-  //   setFormData(initialValues);
-  // }, [initialValues]);
 
   const formik = useFormik({
     initialValues: initialValues,
